@@ -11,22 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217122706) do
+ActiveRecord::Schema.define(version: 20160227191507) do
 
   create_table "delivers", force: :cascade do |t|
-    t.integer  "user_id"   #user_id of the user who placed the order
-    t.string   "location"  #Drop location
-    t.datetime "created_at", null: false #Time delivery 
+    t.integer  "user_id"
+    t.string   "location"
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "user_id"   #Every user has a unique user_id
-    t.string   "quantity"  #quantity of food present
-    t.string   "description" #type of food
-    t.string   "location"  #pick-up location
-    t.datetime "created_at",  null: false #Time of request
+    t.integer  "user_id"
+    t.string   "quantity"
+    t.string   "description"
+    t.string   "location"
+    t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
