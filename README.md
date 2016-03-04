@@ -13,16 +13,16 @@ Windows and Mac OS users refer to: http://railsinstaller.org/en
 ## Contributing
 Follow the following steps to setup development environment and start contibuting to roti-bank:
 
-##Setup Infctr in development environment for linux
+##Setup roti-bank in development environment for linux
 
 1. Clone the repository by running the following command:     
   
-         git clone https://github.com/JSS_OSDC/Infctr.git Infctr
+         git clone https://github.com/JSS-OSDC/ROTI-BANK roti-bank
 
-2. Move inside the directory of ROTI-BANK/
+2. Move inside the directory of roti-bank/
 Backend:
          
-         cd ROTI-BANK/Bakend
+         cd roti-bank/Backend
 
 3. Run the following to install all required gems:
          
