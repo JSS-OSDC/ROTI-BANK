@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {sessions: 'sessions',registrations: 'registrations'}
   get 'users/sign_in' ,:as => :sign_in
   get 'navs/index'
 
